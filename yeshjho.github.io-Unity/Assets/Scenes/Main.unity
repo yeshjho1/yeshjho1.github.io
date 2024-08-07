@@ -667,6 +667,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ede3c47ff89e7c4ea47650d92e247ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _countriesRawData: {fileID: 4900000, guid: 37cf65e68388a6f4a95548464eb96daa, type: 3}
 --- !u!4 &597539938
 Transform:
   m_ObjectHideFlags: 0
@@ -1389,7 +1390,7 @@ PrefabInstance:
     - target: {fileID: 166233099058900836, guid: 998514876b842e44194db5dce130ba5b, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 3286163911610860551, guid: 93b1362e34c42c841a20941aa4792d29, type: 3}
+      objectReference: {fileID: -4327568573427006476, guid: 6d8d24c9fca961046b6cc5ea8dde4616, type: 3}
     - target: {fileID: 166233099058900836, guid: 998514876b842e44194db5dce130ba5b, type: 3}
       propertyPath: m_Color.b
       value: 1
