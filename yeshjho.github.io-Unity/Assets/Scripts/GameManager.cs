@@ -46,8 +46,6 @@ public class GameManager : MonoBehaviour
         
         DontDestroyOnLoad(gameObject);
         Instance = this;
-        CountryDataStorage = new CountryDataStorage(_countriesRawData.text); 
-        
-        WebGLInput.captureAllKeyboardInput = false;
+        CountryDataStorage = new CountryDataStorage(_countriesRawData.text);
     }
 }
