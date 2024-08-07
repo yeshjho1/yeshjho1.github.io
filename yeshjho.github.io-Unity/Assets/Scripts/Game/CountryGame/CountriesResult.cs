@@ -51,8 +51,8 @@ public class CountriesResult : MonoBehaviour
                     image.sprite = flag;
                 }
 
-                _fullNameText.text = countryData.KoreanNameFull;
-                _shortNameText.text = $"({countryData.KoreanNameShort})";
+                _fullNameText.text = countryData.KoreanNameShort;
+                _shortNameText.text = $"({countryData.KoreanNameFull})";
             });
         }
     }

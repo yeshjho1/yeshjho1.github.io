@@ -57,7 +57,7 @@ public class CountryDataStorage
         FieldInfo[] fields = (from fieldName in header select typeof(CountryData).GetField(fieldName)).ToArray();
         int fieldCount = fields.Length;
 
-        foreach (string line in lines[Range.StartAt(1)])
+        foreach (string line in lines[1..])
         {
             if (string.IsNullOrWhiteSpace(line))
             {
@@ -66,6 +66,14 @@ public class CountryDataStorage
 
             var data = new CountryData();
             string[] values = splitPattern.Split(line);
+
+            for (int i = 0; i < fieldCount; i++)
+            {
+                if (values[i].StartsWith("\"") && values[i].EndsWith("\""))
+                {
+                    values[i] = values[i][1..^1];
+                }
+            }
 
             for (int i = 0; i < fieldCount; i++)
             {

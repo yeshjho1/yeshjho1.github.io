@@ -75,8 +75,8 @@ public class Settings : MonoBehaviour
             countryListElement.transform.Find("Flag").GetComponent<Image>().sprite = 
                 Resources.Load<Sprite>($"flag/{country.ISO3166Code}");
 
-            countryListElement.transform.Find("FullName").GetComponent<TMP_Text>().text = country.KoreanNameFull;
-            countryListElement.transform.Find("ShortName").GetComponent<TMP_Text>().text = $"({country.KoreanNameShort})";
+            countryListElement.transform.Find("FullName").GetComponent<TMP_Text>().text = country.KoreanNameShort;
+            countryListElement.transform.Find("ShortName").GetComponent<TMP_Text>().text = $"({country.KoreanNameFull})";
         }
 
         float elementHeight = _nonUNCountryListElement.GetComponent<RectTransform>().rect.height;

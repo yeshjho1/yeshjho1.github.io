@@ -15,13 +15,19 @@ EditorBuildSettings:
     path: Assets/Scenes/CountriesRange.unity
     guid: 4bfd62433ea23644daab48bd18216e66
   - enabled: 1
-    path: Assets/Scenes/FlagToTextFieldInGame.unity
-    guid: c98f9356007bea64fb14ee20ef1c3ce9
+    path: Assets/Scenes/CountryGame/FlagToTextBlank.unity
+    guid: 0e6769f0934e48941a0b8848cf464f3f
   - enabled: 1
-    path: Assets/Scenes/FlagToMultipleChoiceInGame.unity
-    guid: 4b3252fe3a8d077439e70f691e647e3c
+    path: Assets/Scenes/CountryGame/FlagToTextChoice.unity
+    guid: d1ca0ad145f87d140a6a86ae65ff01bc
   - enabled: 1
-    path: Assets/Scenes/CountriesResult.unity
+    path: Assets/Scenes/CountryGame/TextToTextBlank.unity
+    guid: 26a8fda7d1289e74cb7cec73b76e5b1b
+  - enabled: 1
+    path: Assets/Scenes/CountryGame/TextToTextChoice.unity
+    guid: 0b0d57e7680ab9546812bda1b201a99a
+  - enabled: 1
+    path: Assets/Scenes/CountryGame/CountriesResult.unity
     guid: 9d77721419ace644bbda59305166d4e3
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
