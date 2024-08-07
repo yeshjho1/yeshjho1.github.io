@@ -8,6 +8,6 @@ public class CountryRangeSelection : MonoBehaviour
     public void SetCountryRange(int range)
     {
         GameManager.Instance.CountryRange = (ECountryRange)range;
-        UnityEngine.SceneManagement.SceneManager.LoadScene("FlagToTextField");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("FlagToTextFieldInGame");
     }
 }
