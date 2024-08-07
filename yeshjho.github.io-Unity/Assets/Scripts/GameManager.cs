@@ -4,10 +4,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public enum EGameMode
+public enum ECountryGameElement
 {
-    FlagToTextField = 0,
-    FlagToMultipleChoice = 1,
+    Name = 0,
+    Flag = 1,
+    Capital = 2,
+}
+
+public enum ECountryGameType
+{
+    TextField = 0,
+    MultipleChoices = 1,
 }
 
 
@@ -37,9 +44,12 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance { get; private set; }
     public CountryDataStorage CountryDataStorage { get; private set; }
-    
-    public EGameMode GameMode;
+
+    public ECountryGameElement CountryGameFrom;
+    public ECountryGameElement CountryGameTo;
+    public ECountryGameType CountryGameType;
     public ECountryRange CountryRange;
+
     public GameResult GameResult;
 
 

@@ -18,14 +18,22 @@ public class CountryData
     public HashSet<string> KoreanNameAdditionals;
     public bool HasUNMembership;
     public bool HasOfficialISO3166Code;
+    public HashSet<string> Capital;
+    public HashSet<string> CapitalAdditionals;
+    public string CapitalComment;
 
     public void PostInitialize()
     {
         KoreanNames = new HashSet<string> { KoreanNameShort, KoreanNameFull };
         KoreanNames.UnionWith(KoreanNameAdditionals);
+
+        Capitals = new();
+        Capitals.UnionWith(Capital);
+        Capitals.UnionWith(CapitalAdditionals);
     }
 
     public HashSet<string> KoreanNames;
+    public HashSet<string> Capitals;
 }
 
 
@@ -73,11 +81,14 @@ public class CountryDataStorage
                 }
                 else
                 {
-                    fields[i].SetValue(data, header[i] switch
-                        {
-                            "KoreanNameAdditionals" => new HashSet<string>(values[i].Split(';')),
-                            _ => null
-                        });
+                    if (fields[i].FieldType == typeof(HashSet<string>))
+                    {
+                        fields[i].SetValue(data, new HashSet<string>(values[i].Split(';')));
+                    }
+                    else
+                    {
+                        throw new NotSupportedException();
+                    }
                 }
             }
 
