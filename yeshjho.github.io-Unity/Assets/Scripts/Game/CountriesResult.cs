@@ -18,6 +18,8 @@ public class CountriesResult : MonoBehaviour
 
     private void Start()
     {
+        _flagWindow.SetActive(false);
+
         var countryGameResult = (CountryGameResult)GameManager.Instance.GameResult;
 
         _scoreText.text = $"{countryGameResult.Score}/{countryGameResult.TotalCountryCount}";
@@ -31,9 +33,10 @@ public class CountriesResult : MonoBehaviour
             GameObject countryListElement = Instantiate(_countryListElementPrefab, _scrollContent.transform);
             foreach (Image image in countryListElement.GetComponentsInChildren<Image>())
             {
-                if (image.sprite == null)
+                if (image.GetComponent<Button>() == null)
                 {
                     image.sprite = flag;
+                    image.preserveAspect = true;
                     break;
                 }
             }
@@ -49,7 +52,7 @@ public class CountriesResult : MonoBehaviour
                 }
 
                 _fullNameText.text = countryData.KoreanNameFull;
-                _shortNameText.text = countryData.KoreanNameShort;
+                _shortNameText.text = $"({countryData.KoreanNameShort})";
             });
         }
     }

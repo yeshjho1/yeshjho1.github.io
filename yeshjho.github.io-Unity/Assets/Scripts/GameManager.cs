@@ -32,28 +32,20 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance { get; private set; }
     public CountryDataStorage CountryDataStorage { get; private set; }
-
-    public EGameMode GameMode { get; private set; }
+    
     public GameResult GameResult;
-
-    private string NextSceneNameByGameMode => GameMode switch
-    {
-        EGameMode.FlagToTextField => "CountriesRange",
-        _ => throw new ArgumentOutOfRangeException()
-    };
 
 
     private void Awake()
     {
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        
         DontDestroyOnLoad(gameObject);
         Instance = this;
         CountryDataStorage = new CountryDataStorage(_countriesRawData.text);
-    }
-
-
-    public void OnSelectGameMode(int gameMode)
-    {
-        GameMode = (EGameMode)gameMode;
-        UnityEngine.SceneManagement.SceneManager.LoadScene(NextSceneNameByGameMode);
     }
 }

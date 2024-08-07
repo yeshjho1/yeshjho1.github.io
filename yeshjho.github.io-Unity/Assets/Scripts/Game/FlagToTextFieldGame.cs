@@ -46,7 +46,7 @@ public class FlagToTextFieldGame : MonoBehaviour
         _wrongPart.SetActive(!isCorrect);
 
         _fullAnswer.text = _currentCountryData.KoreanNameFull;
-        _shortAnswer.text = _currentCountryData.KoreanNameShort;
+        _shortAnswer.text = $"({_currentCountryData.KoreanNameShort})";
 
         if (isCorrect)
         {
@@ -67,10 +67,6 @@ public class FlagToTextFieldGame : MonoBehaviour
 
     private void NextQuiz()
     {
-        _inputPart.SetActive(true);
-        _resultPart.SetActive(false);
-        _inputField.text = "";
-
         if (_countryCodePool.Count == 0)
         {
             GameManager.Instance.GameResult = new CountryGameResult
@@ -82,6 +78,10 @@ public class FlagToTextFieldGame : MonoBehaviour
             UnityEngine.SceneManagement.SceneManager.LoadScene("CountriesResult");
             return;
         }
+
+        _inputPart.SetActive(true);
+        _resultPart.SetActive(false);
+        _inputField.text = "";
 
         _currentCountryData = GameManager.Instance.CountryDataStorage.CountryData[_countryCodePool[0]];
         _countryCodePool.RemoveAt(0);
