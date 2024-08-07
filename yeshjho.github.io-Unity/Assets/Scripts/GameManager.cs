@@ -7,6 +7,7 @@ using UnityEngine;
 public enum EGameMode
 {
     FlagToTextField = 0,
+    FlagToMultipleChoice = 1,
 }
 
 
@@ -37,6 +38,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
     public CountryDataStorage CountryDataStorage { get; private set; }
     
+    public EGameMode GameMode;
     public ECountryRange CountryRange;
     public GameResult GameResult;
 

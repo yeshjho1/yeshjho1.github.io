@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/FlagToTextFieldInGame.unity
     guid: c98f9356007bea64fb14ee20ef1c3ce9
   - enabled: 1
+    path: Assets/Scenes/FlagToMultipleChoiceInGame.unity
+    guid: 4b3252fe3a8d077439e70f691e647e3c
+  - enabled: 1
     path: Assets/Scenes/CountriesResult.unity
     guid: 9d77721419ace644bbda59305166d4e3
   m_configObjects: {}
