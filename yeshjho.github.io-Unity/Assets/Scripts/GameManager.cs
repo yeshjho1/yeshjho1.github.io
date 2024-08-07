@@ -13,6 +13,10 @@ public enum EGameMode
 public enum ECountryRange
 {
     All = 0,
+    Random100 = 1,
+    Random50 = 2,
+    Random10 = 3,
+    Random1 = 4,
 }
 
 
@@ -33,6 +37,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
     public CountryDataStorage CountryDataStorage { get; private set; }
     
+    public ECountryRange CountryRange;
     public GameResult GameResult;
 
 

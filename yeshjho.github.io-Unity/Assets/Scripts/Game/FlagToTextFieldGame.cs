@@ -1,8 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
+using System.Text.RegularExpressions;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -37,10 +37,9 @@ public class FlagToTextFieldGame : MonoBehaviour
 
         _inputPart.SetActive(false);
         _resultPart.SetActive(true);
-
+        
         bool isCorrect = _currentCountryData.KoreanNames.Any(countryName =>
-            string.Compare(_inputField.text, countryName, CultureInfo.CurrentCulture,
-                CompareOptions.IgnoreCase | CompareOptions.IgnoreSymbols) == 0);
+            string.Equals(Regex.Replace(_inputField.text, @"\s", ""), Regex.Replace(countryName, @"\s", "")));
 
         _correctPart.SetActive(isCorrect);
         _wrongPart.SetActive(!isCorrect);
@@ -99,7 +98,15 @@ public class FlagToTextFieldGame : MonoBehaviour
         var rng = new System.Random();
         _countryCodePool = GameManager.Instance.CountryDataStorage.CountryData.Keys
             .Where(x => !GameManager.Instance.CountryDataStorage.Option.CountryCodesToExclude.Contains(x))
-            .OrderBy(_ => rng.Next()).ToList();
+            .OrderBy(_ => rng.Next()).Take(GameManager.Instance.CountryRange switch
+            {
+                ECountryRange.All => GameManager.Instance.CountryDataStorage.CountryData.Count,
+                ECountryRange.Random100 => 100,
+                ECountryRange.Random50 => 50,
+                ECountryRange.Random10 => 10,
+                ECountryRange.Random1 => 1,
+                _ => throw new ArgumentOutOfRangeException()
+            }).ToList();
         _totalCountryCount = _countryCodePool.Count;
 
         _scoreText.text = "0";
