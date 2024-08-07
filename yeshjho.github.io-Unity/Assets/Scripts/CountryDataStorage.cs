@@ -31,7 +31,7 @@ public class CountryData
 
 public class CountryDataOption
 {
-    public HashSet<string> CountryCodesToExclude = new() { "af_0", "ak", "ck", "nu", "nc", "eh", "ll", "os", "ts" };
+    public HashSet<string> CountryCodesToExclude = new() { "af_0", "ak", "ck", "nu", "nc", "ll", "os", "ts" };
 }
 
 
