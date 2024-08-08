@@ -19,17 +19,15 @@ public class CountryGamePart : MonoBehaviour
 
 public class ICountryGameQuestion : CountryGamePart
 {
-    public virtual void Initialize(CountryData countryData)
-    {
-    }
+    public virtual void Initialize(CountryData countryData) { }
+
+    public virtual void OnResultShown() {}
 }
 
 
 public class ICountryGameInput : CountryGamePart
 {
-    public virtual void Initialize(CountryData countryData)
-    {
-    }
+    public virtual void Initialize(CountryData countryData) { }
 }
 
 
@@ -37,11 +35,13 @@ public class ICountryGameResult : CountryGamePart
 {
     [SerializeField] private GameObject _correctPart;
     [SerializeField] private GameObject _wrongPart;
+    [SerializeField] private CountryInformation _countryInformation;
 
     public virtual void Initialize(CountryData countryData, bool isCorrect)
     {
         _correctPart.SetActive(isCorrect);
         _wrongPart.SetActive(!isCorrect);
+        _countryInformation.Initialize(countryData);
     }
 
     public void OnNext()
@@ -99,6 +99,8 @@ public class CountryGame : MonoBehaviour
     {
         _inputPart.gameObject.SetActive(false);
         _resultPart.gameObject.SetActive(true);
+
+        _questionPart.OnResultShown();
 
         _resultPart.Initialize(_currentCountryData, isCorrect);
 

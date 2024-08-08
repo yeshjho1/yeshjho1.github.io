@@ -10,17 +10,12 @@ public class CountriesResult : MonoBehaviour
 
     [SerializeField] private TMP_Text _scoreText;
     [SerializeField] private GameObject _scrollContent;
-    [SerializeField] private GameObject _flagWindow;
-    [SerializeField] private Image[] _flagImages;
-    [SerializeField] private TMP_Text _fullNameText;
-    [SerializeField] private TMP_Text _shortNameText;
-    [SerializeField] private TMP_Text _capitalText;
-    [SerializeField] private TMP_Text _capitalCommentText;
+    [SerializeField] private CountryInformation _countryInformation;
 
 
     private void Start()
     {
-        _flagWindow.SetActive(false);
+        _countryInformation.gameObject.SetActive(false);
 
         var countryGameResult = (CountryGameResult)GameManager.Instance.GameResult;
 
@@ -46,17 +41,8 @@ public class CountriesResult : MonoBehaviour
 
             countryListElement.GetComponent<Button>().onClick.AddListener(() =>
             {
-                _flagWindow.SetActive(true);
-
-                foreach (Image image in _flagImages)
-                {
-                    image.sprite = flag;
-                }
-
-                _fullNameText.text = countryData.KoreanNameShort;
-                _shortNameText.text = $"({countryData.KoreanNameFull})";
-                _capitalText.text = string.Join(", ", countryData.Capital);
-                _capitalCommentText.text = countryData.CapitalComment;
+                _countryInformation.gameObject.SetActive(true);
+                _countryInformation.Initialize(countryData);
             });
         }
     }

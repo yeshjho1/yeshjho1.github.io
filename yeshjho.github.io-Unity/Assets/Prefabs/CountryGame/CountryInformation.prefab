@@ -9,8 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5689795494564087331}
+  - component: {fileID: 1694481441085686884}
   m_Layer: 5
-  m_Name: FlagWindow
+  m_Name: CountryInformation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,6 +45,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1694481441085686884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548759875468678553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a29e27b59fde9445b813c251bb72ab4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _flagImages:
+  - {fileID: 7551641834227762261}
+  - {fileID: 2354129982454405455}
+  _fullNameText: {fileID: 5629147327918271085}
+  _shortNameText: {fileID: 1296163652618060744}
+  _capitalText: {fileID: 5177208513598163282}
+  _capitalCommentText: {fileID: 5633056051293495263}
 --- !u!1 &1997454790462737093
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,7 +257,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.9607843}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.99215686}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1456,6 +1476,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8728119298142237262, guid: 8c67628e84de7bb4ba8008f3103c85f3, type: 3}
   m_PrefabInstance: {fileID: 7735445600097215373}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2354129982454405455 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5472540353987721922, guid: 8c67628e84de7bb4ba8008f3103c85f3, type: 3}
+  m_PrefabInstance: {fileID: 7735445600097215373}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2802073721325555185 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5601112334940909180, guid: 8c67628e84de7bb4ba8008f3103c85f3, type: 3}

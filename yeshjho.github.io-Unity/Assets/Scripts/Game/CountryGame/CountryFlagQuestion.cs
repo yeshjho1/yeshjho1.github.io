@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class CountryFlagQuestion : ICountryGameQuestion
 {
     [SerializeField] private Image[] _flagImages;
+    [SerializeField] private GameObject _expandButton;
 
 
     public override void Initialize(CountryData countryData)
@@ -18,5 +19,12 @@ public class CountryFlagQuestion : ICountryGameQuestion
         {
             image.sprite = flag;
         }
+
+        _expandButton.SetActive(true);
+    }
+
+    public override void OnResultShown()
+    {
+        _expandButton.SetActive(false);
     }
 }
