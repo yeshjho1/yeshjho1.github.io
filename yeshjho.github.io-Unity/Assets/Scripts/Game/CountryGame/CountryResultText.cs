@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+
 public class CountryResultText : ICountryGameResult
 {
     [SerializeField] private TMP_Text _mainText;

@@ -27,6 +27,9 @@ EditorBuildSettings:
     path: Assets/Scenes/CountryGame/TextToTextChoice.unity
     guid: 0b0d57e7680ab9546812bda1b201a99a
   - enabled: 1
+    path: Assets/Scenes/CountryGame/TextToFlagChoice.unity
+    guid: 931d19deec4fbff48896ac209c8cffc9
+  - enabled: 1
     path: Assets/Scenes/CountryGame/CountriesResult.unity
     guid: 9d77721419ace644bbda59305166d4e3
   m_configObjects: {}
