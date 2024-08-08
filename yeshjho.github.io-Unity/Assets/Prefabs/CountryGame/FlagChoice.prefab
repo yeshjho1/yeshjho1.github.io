@@ -1261,6 +1261,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6917954184756146396}
     m_Modifications:
+    - target: {fileID: 1430242895674446551, guid: 0a212474ac9f84e409301ecd79422781, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -503.67993
+      objectReference: {fileID: 0}
     - target: {fileID: 1548759875468678553, guid: 0a212474ac9f84e409301ecd79422781, type: 3}
       propertyPath: m_Name
       value: FlagWindow
@@ -1268,6 +1272,10 @@ PrefabInstance:
     - target: {fileID: 1548759875468678553, guid: 0a212474ac9f84e409301ecd79422781, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2669303060585946967, guid: 0a212474ac9f84e409301ecd79422781, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 5689795494564087331, guid: 0a212474ac9f84e409301ecd79422781, type: 3}
       propertyPath: m_Pivot.x
@@ -1385,9 +1393,11 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 3693838262335317064, guid: 0a212474ac9f84e409301ecd79422781, type: 3}
     - {fileID: 1997454790462737093, guid: 0a212474ac9f84e409301ecd79422781, type: 3}
+    - {fileID: 7423209294406021590, guid: 0a212474ac9f84e409301ecd79422781, type: 3}
+    - {fileID: 9139777968107936729, guid: 0a212474ac9f84e409301ecd79422781, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5689795494564087331, guid: 0a212474ac9f84e409301ecd79422781, type: 3}
-      insertIndex: 4
+      insertIndex: 2
       addedObject: {fileID: 970950997166338573}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a212474ac9f84e409301ecd79422781, type: 3}

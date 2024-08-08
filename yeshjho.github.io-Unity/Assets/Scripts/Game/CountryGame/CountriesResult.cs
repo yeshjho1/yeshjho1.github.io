@@ -14,6 +14,8 @@ public class CountriesResult : MonoBehaviour
     [SerializeField] private Image[] _flagImages;
     [SerializeField] private TMP_Text _fullNameText;
     [SerializeField] private TMP_Text _shortNameText;
+    [SerializeField] private TMP_Text _capitalText;
+    [SerializeField] private TMP_Text _capitalCommentText;
 
 
     private void Start()
@@ -40,7 +42,7 @@ public class CountriesResult : MonoBehaviour
                     break;
                 }
             }
-            countryListElement.GetComponentInChildren<TMP_Text>().text = countryData.KoreanNameShort;
+            countryListElement.GetComponentInChildren<TMP_Text>().text = $"{countryData.KoreanNameShort} - {string.Join(", ", countryData.Capital)}";
 
             countryListElement.GetComponent<Button>().onClick.AddListener(() =>
             {
@@ -53,6 +55,8 @@ public class CountriesResult : MonoBehaviour
 
                 _fullNameText.text = countryData.KoreanNameShort;
                 _shortNameText.text = $"({countryData.KoreanNameFull})";
+                _capitalText.text = string.Join(", ", countryData.Capital);
+                _capitalCommentText.text = countryData.CapitalComment;
             });
         }
     }
