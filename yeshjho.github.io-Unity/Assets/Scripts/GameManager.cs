@@ -25,6 +25,13 @@ public enum ECountryRange
     Random50 = 2,
     Random10 = 3,
     Random1 = 4,
+    Asia = 5,
+    Europe = 6,
+    Africa = 7,
+    NorthAmerica = 8,
+    SouthAmerica = 9,
+    America = 10,
+    Oceania = 11,
 }
 
 

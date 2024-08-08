@@ -120,14 +120,25 @@ public class CountryGame : MonoBehaviour
         var rng = new System.Random();
         _countryCodePool = GameManager.Instance.CountryDataStorage.CountryData.Keys
             .Where(x => !GameManager.Instance.CountryDataStorage.Option.CountryCodesToExclude.Contains(x))
+            .Where(x => GameManager.Instance.CountryRange switch
+            {
+                ECountryRange.Asia => GameManager.Instance.CountryDataStorage.CountryData[x].Continents.Contains("아시아"),
+                ECountryRange.Europe => GameManager.Instance.CountryDataStorage.CountryData[x].Continents.Contains("유럽"),
+                ECountryRange.Africa => GameManager.Instance.CountryDataStorage.CountryData[x].Continents.Contains("아프리카"),
+                ECountryRange.NorthAmerica => GameManager.Instance.CountryDataStorage.CountryData[x].Continents.Contains("북아메리카"),
+                ECountryRange.SouthAmerica => GameManager.Instance.CountryDataStorage.CountryData[x].Continents.Contains("남아메리카"),
+                ECountryRange.America => GameManager.Instance.CountryDataStorage.CountryData[x].Continents.Contains("북아메리카") ||
+                                         GameManager.Instance.CountryDataStorage.CountryData[x].Continents.Contains("남아메리카"),
+                ECountryRange.Oceania => GameManager.Instance.CountryDataStorage.CountryData[x].Continents.Contains("오세아니아"),
+                _ => true
+            })
             .OrderBy(_ => rng.Next()).Take(GameManager.Instance.CountryRange switch
             {
-                ECountryRange.All => GameManager.Instance.CountryDataStorage.CountryData.Count,
                 ECountryRange.Random100 => 100,
                 ECountryRange.Random50 => 50,
                 ECountryRange.Random10 => 10,
                 ECountryRange.Random1 => 1,
-                _ => throw new ArgumentOutOfRangeException()
+                _ => GameManager.Instance.CountryDataStorage.CountryData.Count
             }).ToList();
         _totalCountryCount = _countryCodePool.Count;
 

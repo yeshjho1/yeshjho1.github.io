@@ -21,6 +21,7 @@ public class CountryData
     public HashSet<string> Capital;
     public HashSet<string> CapitalAdditionals;
     public string CapitalComment;
+    public HashSet<string> Continents;
 
     public void PostInitialize()
     {
