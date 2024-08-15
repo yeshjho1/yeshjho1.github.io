@@ -32,5 +32,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CountryGame/CountriesResult.unity
     guid: 9d77721419ace644bbda59305166d4e3
+  - enabled: 1
+    path: Assets/Scenes/CountryGame/CountriesStudy.unity
+    guid: b98a884b9ca76874e937254d70c013a9
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
